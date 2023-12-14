@@ -1,6 +1,8 @@
-import React from "react"
-import Content from "../demo/hello.md"
+function getAccountEmails() {
+  const userIds = this.find({})
+    .fetch().map(({ userId }) => userId);
 
-export default function Page() {
-  return <Content />
+  return UsersCollection.find(
+    { _id: { $in: userIds } },
+  ).fetch().map(({ email }) => email);
 }

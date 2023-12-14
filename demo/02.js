@@ -1,19 +1,8 @@
-import React from "react"
-import { MDXProvider } from "@mdx-js/react"
-import Content from "../demo/hello.md"
+async function getAccountEmails() {
+  const userIds = await this.find({})
+    .fetch().map(({ userId }) => userId);
 
-export default function Page() {
-  return (
-    <MDXProvider components={components}>
-      <Content />
-    </MDXProvider>
-  )
-}
-
-const components = {
-  h1: ({ children }) => (
-    <h1 style={{ border: "12px solid purple" }}>
-      {children}
-    </h1>
-  ),
+  return UsersCollection.find(
+    { _id: { $in: userIds } },
+  ).fetch().map(({ email }) => email);
 }
