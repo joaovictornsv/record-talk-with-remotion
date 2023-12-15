@@ -30,3 +30,7 @@
 .minieditor .cs-scaled-content > div:first-child, .minieditor .cs-scaled-content >  div:last-child  {
   display: none;
 }
+
+.minieditor .cs-scaled-content > div  {
+  transform: none !important;
+}
