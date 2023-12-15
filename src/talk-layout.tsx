@@ -28,29 +28,17 @@ export function TalkLayout({
       stiffness: 60,
       damping: 200,
       mass: 1,
+      overshootClamping: true
     }
   });
 
   return (
-    <Center>
-      <main className="grid">
-        <div className="slot-1">
-          <MiniEditor
-            style={{ height: "100%" }}
-            steps={editorSteps}
-            progress={progress}
-          />
-        </div>
-      </main>
-    </Center>
-  );
-}
-
-
-function Center({ children }) {
-  return (
-    <div className="talk-container">
-      <div className="talk-scale">{children}</div>
+    <div className="minieditor">
+      <MiniEditor
+        steps={editorSteps}
+        progress={progress}
+      />
     </div>
   );
 }
+
